@@ -29,7 +29,7 @@ const ContactList = () => {
     <>
       {loadingContacts && <PreLoader />}
       {errorFetch && <Error>Error! Something went wrong (Try again!</Error>}
-      {items && items.length > 0 && !loadingContacts && !errorFetch ? (
+      {!loadingContacts && !errorFetch && items && items.length > 0 ? (
         <List>
           {items.map(({ id, name, number }) => (
             <ContactListItem
