@@ -6,7 +6,6 @@ const Loader = styled.div`
   height: 100px;
   margin: 0 auto;
   perspective: 780px;
-  padding-top: 30px;
 `;
 
 const Inner = styled.div`

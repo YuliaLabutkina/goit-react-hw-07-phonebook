@@ -39,17 +39,17 @@ const loading = createReducer(false, {
 });
 
 const error = createReducer(false, {
-  [tasksActions.fetchContactRequest]: () => false,
-  [tasksActions.fetchContactSuccess]: () => false,
-  [tasksActions.fetchContactError]: () => true,
+  [tasksActions.fetchContactRequest]: () => '',
+  [tasksActions.fetchContactSuccess]: () => '',
+  [tasksActions.fetchContactError]: (_, { payload }) => payload,
 
-  [tasksActions.addContactRequest]: () => false,
-  [tasksActions.addContactSuccess]: () => false,
-  [tasksActions.addContactError]: () => true,
+  [tasksActions.addContactRequest]: () => '',
+  [tasksActions.addContactSuccess]: () => '',
+  [tasksActions.addContactError]: (_, { payload }) => payload,
 
-  [tasksActions.removeContactRequest]: () => false,
-  [tasksActions.removeContactSuccess]: () => false,
-  [tasksActions.removeContactError]: () => true,
+  [tasksActions.removeContactRequest]: () => '',
+  [tasksActions.removeContactSuccess]: () => '',
+  [tasksActions.removeContactError]: (_, { payload }) => payload,
 });
 
 const phonebookReducer = combineReducers({
